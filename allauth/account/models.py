@@ -19,6 +19,7 @@ class EmailAddress(models.Model):
 
     user = models.ForeignKey(allauth_app_settings.USER_MODEL,
                              verbose_name=_('user'),
+                             related_name="emailaddress_set",
                              on_delete=models.CASCADE)
     email = models.EmailField(unique=app_settings.UNIQUE_EMAIL,
                               max_length=app_settings.EMAIL_MAX_LENGTH,
